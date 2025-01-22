@@ -16,7 +16,6 @@ st.markdown(
         margin: auto;
     }
     .user-message {
-        text-align: right;
         background-color: #1B3A73; /* NASA Blue */
         color: white;
         padding: 10px;
@@ -24,6 +23,7 @@ st.markdown(
         margin: 10px 0;
         display: inline-block;
         max-width: 60%;
+        float: right;
     }
     .bot-message {
         text-align: left;

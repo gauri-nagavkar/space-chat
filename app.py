@@ -10,19 +10,19 @@ def main():
     agent = Agent().agent
 
     # Streamlit UI
-    st.title("Space Chatbot")
-    st.write("Ask me cool things about space, and I'll fetch the data for you!")
-
-    # CSS for chat-like appearance with NASA theme
     st.markdown(
         """
         <style>
+        .chat-container {
+            max-width: 700px;
+            margin: auto;
+        }
         .user-message {
             text-align: right;
             background-color: #1B3A73; /* NASA Blue */
             color: white;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 10px 0;
             display: inline-block;
             max-width: 60%;
@@ -32,25 +32,32 @@ def main():
             background-color: #D9D9D6; /* Light Gray */
             color: black;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 10px 0;
             display: inline-block;
             max-width: 60%;
         }
-        .chat-container {
-            max-width: 700px;
-            margin: auto;
-        }
         body {
             background-color: #0B0D17; /* Dark Space Gray */
             color: white;
+        }
+        .input-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #0B0D17;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-    # Display chat history with styling
+    st.title("Space Chatbot")
+    st.write("Ask me cool things about space, and I'll fetch the data for you!")
+
+    # Display chat history
     with st.container():
         for message in st.session_state["history"]:
             if message["role"] == "user":
@@ -64,10 +71,11 @@ def main():
                     unsafe_allow_html=True,
                 )
 
-    # Input box for the query
-    query = st.text_input("Enter your question:", "")
+    # Use a local variable for user input
+    query = st.text_input("Type your message here...", placeholder="Ask me something about space!")
 
-    if st.button("Ask"):
+    # Handle the "Send" button click
+    if st.button("Send"):
         if query.strip():
             # Add user query to history
             st.session_state["history"].append({"role": "user", "content": query})
@@ -75,13 +83,13 @@ def main():
             # Get the response from the agent
             response = agent.chat(query).response
 
-            # Add agent response to history
+            # Add bot response to history
             st.session_state["history"].append({"role": "assistant", "content": response})
 
-            # Refresh to show the updated conversation
+            # Refresh the page to show updated conversation
             st.rerun()
         else:
-            st.write("Please enter a valid query.")
+            st.warning("Please type a message before sending.")
 
 if __name__ == "__main__":
     main()

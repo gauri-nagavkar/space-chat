@@ -57,3 +57,5 @@ def fetch_mars_rover_photos(rover_name: str = "curiosity", sol: int = 1000, came
     return response.json().get("photos", [])
   else:
     return {"error": response.json().get("msg", "Unable to fetch data")}
+
+

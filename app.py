@@ -5,7 +5,7 @@ from agent import Agent
 agent = Agent().agent
 
 # Set up the Streamlit app
-st.set_page_config(page_title="Space Chatbot", page_icon="🚀")
+st.set_page_config(page_title="Space Chat", page_icon="🚀")
 
 # CSS for styling
 st.markdown(
@@ -49,7 +49,7 @@ st.markdown(
 )
 
 # Streamlit app title and description
-st.title("🚀 Space Chatbot")
+st.title("🚀 Space Chat")
 st.write("Ask me cool things about space, and I'll fetch the data for you!")
 
 # Initialize chat history

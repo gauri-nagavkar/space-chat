@@ -2,7 +2,7 @@ import streamlit as st
 from agent import Agent
 
 # Create an agent
-agent = Agent().agent
+agent = Agent()
 
 # Set up the Streamlit app
 st.set_page_config(page_title="Space Chat", page_icon="🚀")
@@ -56,6 +56,10 @@ st.write("Ask me cool things about space, and I'll fetch the data for you!")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
 # Display existing chat messages
 for message in st.session_state.messages:
     if message["role"] == "user":
@@ -82,8 +86,8 @@ if query:
 
     # Ensure `query` is a valid string before sending to the agent
     if isinstance(query, str) and query.strip():
-        # Generate agent response
-        response = agent.chat(query).response
+        # Generate agent response, including conversation history
+        response = agent.chat(query, st.session_state.messages).response
 
         # Add bot response to history
         st.session_state.messages.append({"role": "assistant", "content": response})

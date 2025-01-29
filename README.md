@@ -19,7 +19,8 @@ This project is designed as a **showcase of cutting-edge LLM skills** and **real
 
 ### Demo
 Here’s a short video showcasing how Space Chat works:
-![Space Chat Demo](./demo_vid.mp4)
+
+![Space Chat Demo](./demo_video.gif)
 
 ---
 

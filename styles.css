@@ -1,0 +1,35 @@
+.chat-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.user-message {
+    background-color: #1B3A73; /* NASA Blue */
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px 0;
+    display: inline-block;
+    max-width: 60%;
+    float: right;
+}
+
+.bot-message {
+    text-align: left;
+    background-color: #D9D9D6; /* Light Gray */
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px 0;
+    display: inline-block;
+    max-width: 60%;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+body {
+    background-color: #0B0D17; /* Dark Space Gray */
+    color: white;
+}

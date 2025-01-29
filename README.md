@@ -17,6 +17,12 @@ This project is designed as a **showcase of cutting-edge LLM skills** and **real
 
 ---
 
+### Demo
+Here’s a short video showcasing how Space Chat works:
+![Space Chat Demo](./demo_video.mp4)
+
+---
+
 ## 🧠 What You'll Learn from Space Chat
 
 ### 🚀 **Agentic RAG for Real-World Applications**
@@ -143,9 +149,6 @@ streamlit run app.py
 
 6. Open the app in your browser at http://localhost:8501
 
-### Demo
-Here’s a short video showcasing how Space Chat works:
-
 ### 📜 File Structure
 ```
 .
@@ -168,7 +171,7 @@ python-dotenv
 requests
 ```
 
-### 🤝 Let’s Connect
+## 🤝 Let’s Connect
 
 If you're interested in LLM-based systems, RAG workflows, and API integration, or have suggestions to improve this project, feel free to reach out!
 
